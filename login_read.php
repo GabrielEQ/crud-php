@@ -1,5 +1,5 @@
 <?php 
-    $conn = mysqli_connect('localhost', 'root', '142184Biel', 'loginapp');
+    $conn = mysqli_connect('localhost', 'root', '142184Biel', 'desafio8');
     if(!$conn){
         die('Deu ruim!');
     }
@@ -22,8 +22,7 @@
         <div class="col-sm-6">
          <?php 
             while($row = mysqli_fetch_assoc($result)){ 
-                // $nome = $row['username'];
-                echo $nome;
+                print_r($id);
             }
         ?>
         
