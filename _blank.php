@@ -1,14 +1,3 @@
-<?php 
-    $conn = mysqli_connect('localhost', 'root', 'fiap', 'loginapp');
-    if(!$conn){
-        die('Deu ruim!');
-    }
-
-    $query = "SELECT * FROM user";
-    $result = mysqli_query($conn, $query);
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -19,15 +8,9 @@
 
     <body>
       <div class="container">
-        <div class="col-sm-6">
-         <?php 
-            while($row = mysqli_fetch_assoc($result)){ 
-                print_r($row);
-            }
-        ?>
-        
+        <form class="" action="login_create" method="POST">
 
-        </div>
+        </form>
       </div>
     </body>
 </html>
