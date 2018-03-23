@@ -51,5 +51,37 @@
         }
     }
 
+    function insereUsuario(){
+        global $conn;
+        if(isset($_POST['enviar'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+        
+            $query = "INSERT INTO user(username, password) VALUES ('$username', '$password')";
+        
+            // Função que executa um comando SQL / executa uma query
+            $result = mysqli_query($conn, $query);
+        
+            // validalção
+            if(!$result){
+            die("Não deu certo a INCLUSÃO: ". mysqli_error());
+            } else {
+            echo "<script>alert('Dados cadastrados com sucesso!');</script>";
+            }
+        
+        }
+    }
+
+    function lerTabela(){
+        global $conn;
+        $query = "SELECT * FROM user";
+        $result = mysqli_query($conn, $query);
+
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<pre>";
+                print_r($row);
+            echo "</pre>";
+        }
+    }
     
 ?>
