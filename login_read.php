@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     $conn = mysqli_connect('localhost', 'root', '142184Biel', 'loginapp');
     if(!$conn){
@@ -36,3 +37,18 @@
       </div>
     </body>
 </html>
+=======
+<?php 
+    include "db.php";
+    include "functions.php";
+?>
+<?php include "header.php"; ?>
+      <div class="container">
+        <div class="col-sm-6">
+        <?php 
+            lerTabela();
+        ?>
+        <?php include "buttons.php"; ?>
+        </div>
+<?php include "footer.php"; ?>
+>>>>>>> 440bd65b403b88738c487582777013abe3ee1669
