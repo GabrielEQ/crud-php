@@ -1,5 +1,5 @@
-<?php 
-    $conn = mysqli_connect('localhost', 'root', '142184Biel', 'desafio8');
+<?php
+    $conn = mysqli_connect('localhost', 'root', '142184Biel', 'loginapp');
     if(!$conn){
         die('Deu ruim!');
     }
@@ -20,13 +20,18 @@
     <body>
       <div class="container">
         <div class="col-sm-6">
-         <?php 
-            while($row = mysqli_fetch_assoc($result)){ 
-                print_r($id);
-            }
-        ?>
-        
+         <?php
+            while($row = mysqli_fetch_assoc($result)){
+                // print_r($row);
+                $id = $row['id'];
+                $username = $row['username'];
+                $password = $row['password'];
 
+                echo "<pre>" . $id;
+                echo " ". $username;
+                echo " ". $password. "</pre>";
+            }
+         ?>
         </div>
       </div>
     </body>
